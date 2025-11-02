@@ -1,101 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Hotel</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>Hotéis</h1>
     <h3>Okinawa</h3>
     <h4>CHULAX Okinawa Yomitan</h4>
-   <img src="image/chulax-faixada.jpg"
-               alt="Fachada do CHULAX Okinawa Yomitan"
-               loading="lazy"
-               itemprop="photo">
-          <figcaption> Está localizado em Yomitan-mura (村), que pertence ao distrito de Nakagami District (中頭郡), na prefeitura de Okinawa Prefecture, Japão</figcaption>
+    <img
+      src="image/chulax-faixada.jpg"
+      alt="Fachada do CHULAX Okinawa Yomitan"
+      loading="lazy"
+      itemprop="photo"
+    />
+    <figcaption>
+      Está localizado em Yomitan-mura (村), que pertence ao distrito de Nakagami
+      District (中頭郡), na prefeitura de Okinawa Prefecture, Japão
+    </figcaption>
 
-	<div class="dropdown">
-		<button id="toggleBtn" class="btn" aria-expanded="false">Pontos próximos ▾</button>
+    <div class="dropdown">
+      <button id="toggleBtn" class="btn" aria-expanded="false">
+        Pontos próximos ▾
+      </button>
 
-		<div id="choices" class="choices hidden" role="menu" aria-hidden="true">
-			<button class="btn" role="menuitem">Restaurante</button>
-			<button class="btn" role="menuitem">Mercado</button>
-			<button id="beachBtn" class="btn" role="menuitem" aria-expanded="false" aria-controls="beachList">Praia ▸</button>
-		</div>
-	</div>
+      <div id="choices" class="choices hidden" role="menu" aria-hidden="true">
+        <button class="btn" role="menuitem">Restaurante</button>
+        <button class="btn" role="menuitem">Mercado</button>
+        <button
+          id="beachBtn"
+          class="btn"
+          role="menuitem"
+          aria-expanded="false"
+          aria-controls="beachList"
+        >
+          Praia
+        </button>
+      </div>
+    </div>
 
-	<!-- Lista de praias (posição: embaixo do dropdown) -->
-	<div id="beachList" class="beach-list hidden" role="group" aria-hidden="true" aria-labelledby="beachBtn">
-		<article class="beach-item">
-			<h5>Senaha Beach</h5>
-			<img src="image/senaha.jpeg" alt="Senaha Beach, Yomitan" loading="lazy">
-			<figcaption>Senaha Beach, 835, Senaha, Yomitan, Nakagami District, Okinawa 904-0325, Japão</figcaption>
-		</article>
-		<article class="beach-item">
-			<h5>Nagahama Beach</h5>
-			<img src="image/nagahama-beach.jpg" alt="Nagahama Beach, Yomitan" loading="lazy">
-			<figcaption>Nagahama Beach, CPCQ+W7, Nagahama, Yomitan, Okinawa 904-0324, Japão</figcaption>
-		</article>
+    <!-- Lista de praias (posição: embaixo do dropdown) -->
+    <div
+      id="beachList"
+      class="beach-list hidden"
+      role="group"
+      aria-hidden="true"
+      aria-labelledby="beachBtn"
+    >
+      <article class="beach-item">
+        <h5>Senaha Beach</h5>
+        <section class="mini-carousel" id="senahaCarousel" aria-label="Senaha Beach imagens">
+          <button class="btn prev" aria-label="Imagem anterior" id="senahaPrev">
+            ◀
+          </button>
+          <div class="viewport">
+            <div class="track" id="senahaTrack">
+              <div class="slide">
+                <img
+                  src="image/senaha.jpeg"
+                  alt="Senaha Beach, Yomitan - 1"
+                  loading="lazy"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="image/senaha-beach.jpeg"
+                  alt="Senaha Beach, Yomitan - 2"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+          <button class="btn next" aria-label="Próxima imagem" id="senahaNext">
+            ▶
+          </button>
+        </section>
+        <figcaption>
+          Senaha Beach, 835, Senaha, Yomitan, Nakagami District, Okinawa
+          904-0325, Japão
+        </figcaption>
+      </article>
+      <article class="beach-item">
+        <h5>Nagahama Beach</h5>
+        <section class="mini-carousel" id="nagahamaCarousel" aria-label="Nagahama imagens">
+          <button class="btn prev" aria-label="Imagem anterior" id="nagahamaPrev">◀</button>
+          <div class="viewport">
+            <div class="track" id="nagahamaTrack">
+              <div class="slide">
+                <img src="image/nagahama-beach.jpg" alt="Nagahama Beach, Yomitan" loading="lazy" />
+              </div>
+              <div class="slide">
+                <img src="image/nagahama.jpg" alt="Nagahama Beach, Yomitan - 2" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <button class="btn next" aria-label="Próxima imagem" id="nagahamaNext">▶</button>
+        </section>
+        <figcaption>
+          Nagahama Beach, CPCQ+W7, Nagahama, Yomitan, Okinawa 904-0324, Japão
+        </figcaption>
+      </article>
 
-		<article class="beach-item">
-			<h5>Zanpa Beach</h5>
-			<img src="image/zanpa.jpeg" alt="Zanpa Beach, Yomitan" loading="lazy">
-			<figcaption>Zanpa Beach, 1933 Uza, Yomitan, Nakagami District, Okinawa 904-0328, Japão</figcaption>
-		</article>
-	</div>
-
-	<script>
-		const toggleBtn = document.getElementById('toggleBtn');
-		const choices = document.getElementById('choices');
-
-		toggleBtn.addEventListener('click', () => {
-			const isHidden = choices.classList.toggle('hidden');
-			// atualizar atributos ARIA
-			toggleBtn.setAttribute('aria-expanded', (!isHidden).toString());
-			choices.setAttribute('aria-hidden', isHidden.toString());
-		});
-
-		// Toggle da lista de praias (agora fora de .choices)
-		const beachBtn = document.getElementById('beachBtn');
-		const beachList = document.getElementById('beachList');
-
-		beachBtn.addEventListener('click', (e) => {
-			e.stopPropagation();
-			// garantir choices visível ao abrir praias
-			if (choices.classList.contains('hidden')) {
-				choices.classList.remove('hidden');
-				toggleBtn.setAttribute('aria-expanded', 'true');
-				choices.setAttribute('aria-hidden', 'false');
-			}
-			const isHidden = beachList.classList.toggle('hidden');
-			beachBtn.setAttribute('aria-expanded', (!isHidden).toString());
-			beachList.setAttribute('aria-hidden', isHidden.toString());
-		});
-
-		// Fecha o menu ao clicar fora (inclui beachList)
-		document.addEventListener('click', (e) => {
-			if (!document.querySelector('.dropdown').contains(e.target) && !document.getElementById('beachList').contains(e.target)) {
-				if (!choices.classList.contains('hidden')) {
-					choices.classList.add('hidden');
-					toggleBtn.setAttribute('aria-expanded', 'false');
-					choices.setAttribute('aria-hidden', 'true');
-				}
-				if (beachList && !beachList.classList.contains('hidden')) {
-					beachList.classList.add('hidden');
-					beachBtn.setAttribute('aria-expanded', 'false');
-					beachList.setAttribute('aria-hidden', 'true');
-				}
-			}
-		});
-
-		// Impedir que cliques dentro do painel façam o document click fechar tudo instantaneamente
-		document.querySelector('.dropdown').addEventListener('click', (e) => {
-			e.stopPropagation();
-		});
-	</script>
-</body>
+      <article class="beach-item">
+        <h5>Zanpa Beach</h5>
+        <section class="mini-carousel" id="zanpaCarousel" aria-label="Zanpa imagens">
+          <button class="btn prev" aria-label="Imagem anterior" id="zanpaPrev">◀</button>
+          <div class="viewport">
+            <div class="track" id="zanpaTrack">
+              <div class="slide">
+                <img src="image/zanpa.jpeg" alt="Zanpa Beach, Yomitan" loading="lazy" />
+              </div>
+              <div class="slide">
+                <img src="image/zanpa-beach.jpg" alt="Zanpa Beach, Yomitan - 2" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <button class="btn next" aria-label="Próxima imagem" id="zanpaNext">▶</button>
+        </section>
+        <figcaption>
+          Zanpa Beach, 1933 Uza, Yomitan, Nakagami District, Okinawa 904-0328,
+          Japão
+        </figcaption>
+      </article>
+    </div>
+    <!-- carregar comportamento JS externo -->
+    <script src="scripts.js"></script>
+  </body>
 </html>
 
 <!---- CHULAX Okinawa Yomitan está localizado em Yomitan-mura (村), que pertence ao distrito de Nakagami District (中頭郡), na prefeitura de Okinawa Prefecture, Japão. --->

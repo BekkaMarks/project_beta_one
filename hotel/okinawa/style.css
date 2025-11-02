@@ -1,76 +1,254 @@
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 img {
-    width: 360px;
-    height: 200px;
-    border-radius: 15px;
-    object-fit: cover; /* corta centralmente sem distorcer */
-    display: block;
-    max-width: 100%; /* garante que em telas menores a imagem não ultrapasse o container */
+  width: 360px;
+  height: 200px;
+  border-radius: 15px;
+  object-fit: cover; /* corta centralmente sem distorcer */
+  display: block;
+  max-width: 100%; /* garante que em telas menores a imagem não ultrapasse o container */
 }
 
-.hidden { display: none; }
-.nearby-dropdown { display:inline-block; position:relative; }
+.hidden {
+  display: none;
+}
+.nearby-dropdown {
+  display: inline-block;
+  position: relative;
+}
 #nearbyOptions {
-    position:absolute; left:0; top:100%; background:#fff; border:1px solid #ddd;
-    padding:.4rem; box-shadow:0 4px 8px rgba(0,0,0,.06); z-index:10; min-width:160px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 0.4rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  z-index: 10;
+  min-width: 160px;
 }
-#nearbyOptions .nearby-option { display:block; width:100%; text-align:left; margin:.15rem 0; }
-.nearby-output { margin-top:1rem; border-top:1px solid #eee; padding-top:.6rem; }
+#nearbyOptions .nearby-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 0.15rem 0;
+}
+.nearby-output {
+  margin-top: 1rem;
+  border-top: 1px solid #eee;
+  padding-top: 0.6rem;
+}
 
-		/* Estilos mínimos para aparência simples */
-		body { font-family: Arial, sans-serif; padding: 20px; }
-		.btn { padding: 10px 16px; border: 1px solid #ccc; background:#f7f7f7; border-radius:6px; cursor:pointer; }
-		.btn:focus { outline: 2px solid #88a; }
-		.dropdown { display:inline-block; position:relative; }
-		.choices { 
-			margin-top:8px;
-			display:flex;
-			gap:10px;
-			background: #fff;
-			padding:10px;
-			border:1px solid #ddd;
-			border-radius:8px;
-			box-shadow:0 6px 18px rgba(0,0,0,0.08);
-		}
-		.hidden { display:none; }
+/* Estilos mínimos para aparência simples */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+.btn {
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  background: #f7f7f7;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn:focus {
+  outline: 2px solid #88a;
+}
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.choices {
+  margin-top: 8px;
+  display: flex;
+  gap: 10px;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.hidden {
+  display: none;
+}
 
-		/* Novos estilos para lista de praias (posicionada embaixo) */
-		.beach-list {
-			display: flex;
-			flex-direction: column;
-			gap: 12px;
-			margin: 12px 0 0 0; /* aparece embaixo do dropdown */
-			padding: 12px;
-			min-width: 260px;
-			background: #fff;
-			border: 1px solid #e6e6e6;
-			border-radius: 8px;
-			box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-			width: calc(100% - 40px); /* deixa margem lateral com o body padding */
-			max-width: 960px;
-		}
+/* Novos estilos para lista de praias (posicionada embaixo) */
+.beach-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* reduzir espaçamento geral entre cards */
+  margin: 12px 0 0 0; /* aparece embaixo do dropdown */
+  padding: 6px; /* antes 12px */
+  min-width: 260px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  width: calc(100% - 40px); /* deixa margem lateral com o body padding */
+  max-width: 100%;
+}
 
-		/* Garantir que a beach-list fique escondida quando a classe hidden estiver presente */
-		.beach-list.hidden { display: none; }
+/* Garantir que a beach-list fique escondida quando a classe hidden estiver presente */
+.beach-list.hidden {
+  display: none;
+}
 
-		.beach-item h5 { margin: 0 0 6px 0; font-size: 1rem; }
-		.beach-item img {
-			width: 360px;
-			height: 200px;
-			border-radius: 15px;
-			object-fit: cover;
-			display: block;
-			max-width: 100%;
-		}
-		.beach-item figcaption { font-size: 0.85rem; color: #555; margin-top:6px; }
+.beach-item h5 {
+  margin: 0 0 6px 0;
+  font-size: 1rem;
+}
+.beach-item img {
+  max-width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  display: block;
+}
+.beach-item figcaption {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 2px;  /* antes 4px */
+}
 
-		@media (min-width:700px) {
-			.beach-list { flex-direction: row; }
-			.beach-item { flex: 1 1 0; padding: 0 8px; }
-		}
+@media (min-width: 700px) {
+  .beach-list {
+    flex-direction: row;
+  }
+  .beach-item {
+    flex: 1 1 0;
+    padding: 0 4px;   /* antes 0 6px */
+  }
+}
+/* estilos restritos ao carousel Senaha - botões discretos e emparelhados */
+#senahaCarousel {
+  width: 360px;
+  max-width: 100%;
+  position: relative;
+  margin: 4px 0;    /* antes 6px 0 */
+  overflow: visible; /* permite que os botões fiquem visíveis fora da viewport */
+}
+#senahaCarousel .viewport {
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative; /* usado para posicionar os botões dentro da área da imagem */
+}
+#senahaCarousel .track {
+  display: flex;
+  transition: transform 300ms ease;
+  will-change: transform;
+}
+#senahaCarousel .slide {
+  flex: 0 0 360px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 2px;     /* antes 4px */
+}
+#senahaCarousel .slide img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Botões discretos (círculo semi-transparente), um à esquerda e outro à direita */
+#senahaCarousel .btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: background 150ms, transform 80ms, opacity 150ms;
+  opacity: 0.95;
+  font-weight: 600;
+  z-index: 40; /* garante que fiquem acima da imagem */
+  font-size: 14px; /* garante que o símbolo seja legível */
+}
+#senahaCarousel .btn:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateY(-50%) scale(1.02);
+}
+#senahaCarousel .btn:active {
+  transform: translateY(-50%) scale(0.98);
+}
+#senahaCarousel .btn:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+#senahaCarousel .prev { left: 12px; }
+#senahaCarousel .next { right: 12px; }
+
+/* estilos genéricos para pequenos carousels (reaproveita visual do Senaha) */
+.mini-carousel {
+  width: 360px;
+  max-width: 100%;
+  position: relative;
+  margin: 4px 0;    /* antes 6px 0 */
+  overflow: visible;
+}
+.mini-carousel .viewport {
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative; /* usado para posicionar os botões dentro da área da imagem */
+}
+.mini-carousel .track {
+  display: flex;
+  transition: transform 300ms ease;
+  will-change: transform;
+}
+.mini-carousel .slide {
+  flex: 0 0 360px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 2px;     /* antes 4px */
+}
+.mini-carousel .slide img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+.mini-carousel .btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: background 150ms, transform 80ms, opacity 150ms;
+  opacity: 0.95;
+  font-weight: 600;
+  z-index: 40; /* garante que fiquem acima da imagem */
+  font-size: 14px; /* garante que o símbolo seja legível */
+}
+.mini-carousel .btn:hover { background: rgba(0,0,0,0.5); transform: translateY(-50%) scale(1.02); }
+.mini-carousel .btn:active { transform: translateY(-50%) scale(0.98); }
+.mini-carousel .btn:focus { outline: 2px solid rgba(255,255,255,0.6); outline-offset: 2px; }
+.mini-carousel .prev { left: 12px; }
+.mini-carousel .next { right: 12px; }
+
+/* Ajuste para telas pequenas — botões um pouco mais próximos da borda interna */
+@media (max-width: 699px) {
+  #senahaCarousel .prev,
+  .mini-carousel .prev { left: 8px; }
+  #senahaCarousel .next,
+  .mini-carousel .next { right: 8px; }
+}
