@@ -1,0 +1,76 @@
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+img {
+    width: 360px;
+    height: 200px;
+    border-radius: 15px;
+    object-fit: cover; /* corta centralmente sem distorcer */
+    display: block;
+    max-width: 100%; /* garante que em telas menores a imagem não ultrapasse o container */
+}
+
+.hidden { display: none; }
+.nearby-dropdown { display:inline-block; position:relative; }
+#nearbyOptions {
+    position:absolute; left:0; top:100%; background:#fff; border:1px solid #ddd;
+    padding:.4rem; box-shadow:0 4px 8px rgba(0,0,0,.06); z-index:10; min-width:160px;
+}
+#nearbyOptions .nearby-option { display:block; width:100%; text-align:left; margin:.15rem 0; }
+.nearby-output { margin-top:1rem; border-top:1px solid #eee; padding-top:.6rem; }
+
+		/* Estilos mínimos para aparência simples */
+		body { font-family: Arial, sans-serif; padding: 20px; }
+		.btn { padding: 10px 16px; border: 1px solid #ccc; background:#f7f7f7; border-radius:6px; cursor:pointer; }
+		.btn:focus { outline: 2px solid #88a; }
+		.dropdown { display:inline-block; position:relative; }
+		.choices { 
+			margin-top:8px;
+			display:flex;
+			gap:10px;
+			background: #fff;
+			padding:10px;
+			border:1px solid #ddd;
+			border-radius:8px;
+			box-shadow:0 6px 18px rgba(0,0,0,0.08);
+		}
+		.hidden { display:none; }
+
+		/* Novos estilos para lista de praias (posicionada embaixo) */
+		.beach-list {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+			margin: 12px 0 0 0; /* aparece embaixo do dropdown */
+			padding: 12px;
+			min-width: 260px;
+			background: #fff;
+			border: 1px solid #e6e6e6;
+			border-radius: 8px;
+			box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+			width: calc(100% - 40px); /* deixa margem lateral com o body padding */
+			max-width: 960px;
+		}
+
+		/* Garantir que a beach-list fique escondida quando a classe hidden estiver presente */
+		.beach-list.hidden { display: none; }
+
+		.beach-item h5 { margin: 0 0 6px 0; font-size: 1rem; }
+		.beach-item img {
+			width: 360px;
+			height: 200px;
+			border-radius: 15px;
+			object-fit: cover;
+			display: block;
+			max-width: 100%;
+		}
+		.beach-item figcaption { font-size: 0.85rem; color: #555; margin-top:6px; }
+
+		@media (min-width:700px) {
+			.beach-list { flex-direction: row; }
+			.beach-item { flex: 1 1 0; padding: 0 8px; }
+		}
